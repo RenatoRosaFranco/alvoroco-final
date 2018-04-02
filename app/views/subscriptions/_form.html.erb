@@ -1,0 +1,130 @@
+<%= form_with(model: subscription, local: true) do |form| %>
+  <% if subscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subscription.errors.count, "error") %> prohibited this subscription from being saved:</h2>
+      <ul>
+      <% subscription.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field col-md-4">
+    <%= form.label :'Nome' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :name, class: 'form-control', placeholder: 'Digite o nome', id: :subscription_name %>
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'Data de nascimento' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.date_select :birthdate, class: 'form-control', required: 'required', id: :subscription_birthdate %>
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'Nome artistico' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :artistic_name, class: 'form-control', required: 'required', placeholder: 'Digite o nome Artistico',
+    id: :subscription_artistic_name %>
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'Idade' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :age, class: 'form-control', required: 'required', placeholder: 'Digite sua idade',  id: :subscription_age %>
+    </div>    
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'CPF'.upcase %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :cpf, class: 'form-control', required: 'required', placeholder: 'Digite o CPF', id: :subscription_cpf %> 
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :rg %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :rg, class: 'form-control', required: 'required', placeholder: 'Digite o RG', id: :subscription_rg %>
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'Endereço' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :address, class: 'form-control', required: 'required', placeholder: 'Digite o Endereço', id: :subscription_address %>
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'Cidade' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :city, class: 'form-control', required: 'required', placeholder: 'Digite a Cidade', id: :subscription_city %> 
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'Telefone' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :phone, class: 'form-control',  required: 'required', placeholder: 'Digite o Telefone', id: :subscription_phone %>
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'E-mail' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :email, class: 'form-control', required: 'required', placeholder: 'Digite o E-mail', id: :subscription_email %>
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'Escolaridade' %><br>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :schooling, class: 'form-control', required: 'required', placeholder: 'Escolaridade',  id: :subscription_schooling %>
+    </div>
+  </div>
+
+  <div class="field col-md-4">
+    <%= form.label :'Experiencia' %><br>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.check_box :experienced, id: :subscription_experienced %>
+    </div>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :'Descreva a sua experiencia' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_area :experience_description, class:'form-control', placeholder: 'Descreva sua experiencia',
+     id: :subscription_experience_description %>
+    </div>
+  </div>
+
+  <div class="field col-md-12">
+    <%= form.label :'Assinatura Digital' %>
+    <div class='input-group'>
+    <div class='input-group-addon'><i class='glyphicon glyphicon-search'></i></div>
+    <%= form.text_field :signature, class: 'form-control', required: 'required', placeholder: 'Digite sua assinatura Digital',  id: :subscription_signature %>
+    </div>
+  </div>
+
+  <div class="actions col-md-12">
+    <%= form.submit nil, class: 'btn btn-primary btn-lg top' %>
+  </div>
+<% end %>

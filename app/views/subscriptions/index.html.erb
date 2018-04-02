@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Subscriptions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Birthdate</th>
+      <th>Artistic name</th>
+      <th>Age</th>
+      <th>Cpf</th>
+      <th>Rg</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Schooling</th>
+      <th>Experienced</th>
+      <th>Experience description</th>
+      <th>Signature</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subscriptions.each do |subscription| %>
+      <tr>
+        <td><%= subscription.name %></td>
+        <td><%= subscription.birthdate %></td>
+        <td><%= subscription.artistic_name %></td>
+        <td><%= subscription.age %></td>
+        <td><%= subscription.cpf %></td>
+        <td><%= subscription.rg %></td>
+        <td><%= subscription.address %></td>
+        <td><%= subscription.city %></td>
+        <td><%= subscription.phone %></td>
+        <td><%= subscription.email %></td>
+        <td><%= subscription.schooling %></td>
+        <td><%= subscription.experienced %></td>
+        <td><%= subscription.experience_description %></td>
+        <td><%= subscription.signature %></td>
+        <td><%= link_to 'Show', subscription %></td>
+        <td><%= link_to 'Edit', edit_subscription_path(subscription) %></td>
+        <td><%= link_to 'Destroy', subscription, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Subscription', new_subscription_path %>
